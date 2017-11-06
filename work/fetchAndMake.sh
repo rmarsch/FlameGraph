@@ -8,7 +8,7 @@ if [ $# -ne 2 ]
     exit
 fi
 
-scp ubuntu@$1:/home/ubuntu/*.jstk ./
+scp ubuntu@$1:/tmp/*.jstk ./
 
 cat ./*.jstk | ../stackcollapse-jstack.pl | ../flamegraph.pl --color=green --width=700 > $2.svg
 
